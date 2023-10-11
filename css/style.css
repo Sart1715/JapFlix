@@ -22,7 +22,3 @@ main {
 .checked{
     color: orange;
 }
-
-.offcanvas-top{
-    height: fit-content;
-}
