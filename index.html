@@ -24,12 +24,32 @@
       </div>
     </div>
 
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" data-bs-placement="top">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="tituloPelicula"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+     <div class="offcanvas-body" id="descripcionPelicula"></div>
+     <div id="nombreGeneros"></div>
+     <div class="dropdown mt-3">
+     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+       Mas información
+     </button>
+     <ul class="dropdown-menu">
+       <li>Año:<span class="dropdown-item" id="anioPelicula"></span></li>
+       <li>Runtime: <span class="dropdown-item" id="runtimePelicula"></span></li>
+       <li>Budget: <span class="dropdown-item" id="presupuestoPelicula"></span></li>
+       <li>Revenue: <span class="dropdown-item" id="ganaciaPelicula"></span></li>
+     </ul>
+     </div>
+     </div>
+
     <div class="album">
       <ul class="list-group container" id="lista">
       </ul>
     </div>
 
-    <div id="detalle"></div>
+    
     
   </main>
 
