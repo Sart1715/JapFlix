@@ -84,23 +84,27 @@ document.addEventListener("DOMContentLoaded", function(e){
 
    // Función para mostrar el offcanvas con los detalles de la película
    function mostrarOffcanvas(pelicula) {
+    
+        function actualizarContenido(id, contenido) {
+            const elemento = document.getElementById(id);
+              if (elemento) {
+            elemento.textContent = contenido;
+            }
+        };
+  
     const generos = pelicula.genres.map((genre) => genre.name).join(" - ");
-    const tituloPelicula = document.getElementById("tituloPelicula");
-    const descripcionPelicula = document.getElementById("descripcionPelicula");
-    const nombreGeneros = document.getElementById("nombreGeneros");
-    const anioPelicula = document.getElementById("anioPelicula");
-    const runtimePelicula = document.getElementById("runtimePelicula");
-    const presupuestoPelicula = document.getElementById("presupuestoPelicula");
-    const ganaciaPelicula = document.getElementById("ganaciaPelicula");
-    tituloPelicula.textContent = pelicula.title;
-    descripcionPelicula.textContent = pelicula.overview;
-    nombreGeneros.textContent = generos;
+    
+    actualizarContenido("tituloPelicula", pelicula.title);
+    actualizarContenido("descripcionPelicula", pelicula.overview);
+    actualizarContenido("nombreGeneros", generos);
+  
     const fechaLanzamiento = pelicula.release_date;
     const anioLanzamiento = new Date(fechaLanzamiento).getFullYear();
-    anioPelicula.textContent = anioLanzamiento;
-    runtimePelicula.textContent = pelicula.runtime + " min";
-    presupuestoPelicula .textContent = "$" + pelicula.budget;
-    ganaciaPelicula.textContent = "$" + pelicula.revenue;
+    actualizarContenido("anioPelicula", anioLanzamiento);
+  
+    actualizarContenido("runtimePelicula", pelicula.runtime + " min");
+    actualizarContenido("presupuestoPelicula", "$" + pelicula.budget);
+    actualizarContenido("ganaciaPelicula", "$" + pelicula.revenue);
     const offcanvas = new bootstrap.Offcanvas(document.getElementById("offcanvas"));
     offcanvas.show(); 
   }; //Aqui termina la funcion que muestra el offcanvas
